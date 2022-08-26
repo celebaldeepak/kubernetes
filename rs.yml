@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+     name: deepak
+     labels:
+           app: webservice
+spec:
+     replicas: 5
+     selector:
+             matchLabels:
+                     app: webapp
+     template:
+             metadata:
+                     name: sharma
+                     labels:
+                             app: webapp        
+             spec:
+                     containers:
+                             - name: xyz
+                               image: centos/httpd

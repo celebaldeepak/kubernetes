@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+     name: deepak
+     labels:
+           app: dataa
+spec:
+     replicas: 20
+     selector:
+             app: data
+     template:
+             metadata:
+                     name: sharma
+                     labels:
+                             app: data        
+             spec:
+                     containers:
+                             - name: xyz
+                               image: centos/httpd
